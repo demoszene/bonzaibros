@@ -1,0 +1,349 @@
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonzai Bros.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shojumaru&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            padding: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* Fixed Top Container (Fixiert Header + Navigation) */
+        .fixed-header-container {
+            position: sticky;
+            top: 0;
+            background-color: #ffffff; /* Verdeckt den gescrollten Text */
+            z-index: 1000;
+            padding-bottom: 1px;
+        }
+
+        /* Header Section */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            padding-top: 10px;
+        }
+        
+        .logo-img {
+            width: 250px;
+            height: auto;
+            object-fit: contain;
+        }
+
+        /* Container für Titel, Untertext UND Navigation */
+        .title-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end; /* Richtet Titel und Slogan rechts aus */
+            flex-grow: 1;
+            margin-left: 20px;
+        }
+
+        /* Haupttitel */
+        .header-title {
+            font-family: 'Shojumaru', cursive, sans-serif;
+            font-size: 70px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            background: linear-gradient(to bottom, #777 0%, #000 60%, #444 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            margin: 0;
+        }
+
+        /* Untertext / Subtitle */
+        .header-subtitle {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            color: #555;
+            letter-spacing: 1px;
+            margin-top: 5px;
+            margin-bottom: 15px; /* Abstand zum Menü darunter */
+            text-transform: uppercase;
+        }
+		
+	     /* Navigation Bar (Jetzt unter dem Slogan) */
+        nav {
+            position: relative;
+            width: 100%; /* In die volle Breite des rechten Bereichs einpassen */
+            background: #e0e0e0;
+            border: 2px solid #999;
+            border-radius: 8px;
+            padding: 8px 20px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.1), 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        nav::before, nav::after {
+            content: '';
+            position: absolute;
+            left: -10px;
+            right: -10px;
+            height: 2px;
+            background: #aaa;
+        }
+        nav::before { top: -6px; }
+        nav::after { bottom: -6px; }
+
+        .nav-button {
+            background: none;
+            border: none;
+            font-family: 'Arial Black', sans-serif;
+            font-size: 24px;
+            color: #333;
+            text-shadow: 1px 1px 0px #fff, -1px -1px 0px #888;
+            cursor: pointer;
+            transition: transform 0.1s, color 0.1s;
+        }
+
+        .nav-button:hover, .nav-button.active {
+            color: #000;
+            transform: scale(1.05);
+        }
+
+
+        /* Main Content Padding */
+        main {
+            padding-top: 0px;
+        }
+
+        /* Tab Visibility */
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* News Layout */
+        .news-item {
+            margin-bottom: 25px;
+        }
+
+        .news-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .news-text {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        /* Releases Layout */
+        .release-item {
+            display: grid;
+            grid-template-columns: 220px 1fr 220px;
+            gap: 20px;
+            align-items: start;
+        }
+
+        .release-title {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .release-description {
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .release-links {
+            list-style: none;
+        }
+
+        .release-links li {
+            margin-bottom: 4px;
+        }
+
+        .release-links a {
+            color: #0000ee;
+            font-size: 14px;
+            text-decoration: underline;
+        }
+
+        .release-links a:visited {
+            color: #551a8b;
+        }
+
+        /* About Section Layout */
+        .about-text {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #111;
+            margin-bottom: 5px;
+        }
+
+        /* Separator Line */
+        .divider {
+            height: 1px;
+            background: linear-gradient(to bottom, #888, #fff, #bbb);
+            border-radius: 1px;
+            margin: 20px 0;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Fixierter Header- & Navigationsbereich -->
+    <div class="fixed-header-container">
+        <header>
+            <img src="bonzai_cube.jpg" alt="Bonsai Cube Logo" class="logo-img">
+            <div class="title-container">
+                <h1 class="header-title">Bonzai Bros.</h1>
+                <p class="header-subtitle">More than just a tree - Demomaking since 1994</p>
+                
+                <!-- Navigation wurde in den Title-Container direkt unter den Slogan verschoben -->
+                <nav>
+                    <button class="nav-button active" onclick="switchTab('news')">News</button>
+                    <button class="nav-button" onclick="switchTab('releases')">Releases</button>
+                    <button class="nav-button" onclick="switchTab('about')">About</button>
+                </nav>
+            </div>
+        </header>
+    </div>
+
+    <!-- Scrollbarer Inhalt -->
+    <main>
+
+        <!-- NEWS TAB -->
+        <div id="news" class="tab-content active">
+		
+		<div class="divider"></div>
+	    
+			<article class="news-item">
+                <h2 class="news-title">PC-14: Splinter released at Solskogen 2018</h2>
+                <p class="news-text">
+                    Veröffentlichung der PC-Demo „Splinter“ auf der Solskogen 2018 mit Belegung des 1. Platzes im Wettbewerb.
+                </p>
+            </article>
+
+            <div class="divider"></div>
+
+            <article class="news-item">
+                <h2 class="news-title">PC-13: Wursttunnel released at Revision 2017</h2>
+                <p class="news-text">
+                    Veröffentlichung des 26-Stunden-Partyhacks „Wursttunnel“ auf der Revision 2017.
+                </p>
+            </article>
+        
+			<div class="divider"></div>
+		
+		</div>
+
+        <!-- RELEASES TAB -->
+        <div id="releases" class="tab-content">
+		<div class="divider"></div>
+               
+	   <article class="release-item">
+                <div class="release-title">PC-14: Splinter</div>
+                <div class="release-description">
+                    Entstanden in einer 2,5-wöchigen Entwicklungsphase für die Solskogen 2018 in Norwegen. Nutzt Dreiecks-Verzerrungen sowie volumetrische Beleuchtungseffekte. Sieger im PC-Demo-Wettbewerb. Soundtrack von Lerper.
+                </div>
+                <ul class="release-links">
+                    <li><a href="#">PC-14: Splinter on pouet.net</a></li>
+                    <li><a href="#">PC-14: Splinter on YouTube</a></li>
+                    <li><a href="#">PC-14: Splinter Readme</a></li>
+                    <li><a href="#">PC-14: Splinter Soundtrack</a></li>
+                </ul>
+            </article>
+
+            <div class="divider"></div>
+
+            <article class="release-item">
+                <div class="release-title">PC-13: Wursttunnel</div>
+                <div class="release-description">
+                    Partyhack für die Revision 2017 mit Physiksimulation und FFT-basierter Lichtsteuerung über den Soundtrack. Musik von Akustikrausch.
+                </div>
+                <ul class="release-links">
+                    <li><a href="#">PC-13: Wursttunnel on pouet.net</a></li>
+                    <li><a href="#">PC-13: Wursttunnel on YouTube</a></li>
+                    <li><a href="#">PC-13: Wursttunnel Readme</a></li>
+                    <li><a href="#">PC-13: Wursttunnel Soundtrack</a></li>
+                </ul>
+            </article>
+
+            <div class="divider"></div>
+        
+		</div>
+
+        <!-- ABOUT TAB -->
+        <div id="about" class="tab-content">
+								
+				<p class="about-text">
+				Diese Seite ist der Webauftritt der Demoszene-Gruppe <strong>Panda Cube</strong>. Die Gruppe besteht im Kern aus GRX (Programmierung) und Zonbie (Grafik/Design) und veröffentlicht seit 2009 regelmäßig PC-Demos. Bei einzelnen Projekten wirken gelegentlich befreundete Mitwirkende mit. Als primäre Zielplattform für die Grafikdemos dient Windows 10 mit DirectX 11. 
+                Feedback und Anfragen können per E-Mail an <em>grx at pandacube.com</em> gesendet werden.</p>
+							
+				<p class="about-text">
+				Diese Seite ist der Webauftritt der Demoszene-Gruppe <strong>Panda Cube</strong>. Die Gruppe besteht im Kern aus GRX (Programmierung) und Zonbie (Grafik/Design) und veröffentlicht seit 2009 regelmäßig PC-Demos. Bei einzelnen Projekten wirken gelegentlich befreundete Mitwirkende mit. Als primäre Zielplattform für die Grafikdemos dient Windows 10 mit DirectX 11. 
+                Feedback und Anfragen können per E-Mail an <em>grx at pandacube.com</em> gesendet werden.</p>
+				
+				<p class="about-text">
+				Diese Seite ist der Webauftritt der Demoszene-Gruppe <strong>Panda Cube</strong>. Die Gruppe besteht im Kern aus GRX (Programmierung) und Zonbie (Grafik/Design) und veröffentlicht seit 2009 regelmäßig PC-Demos. Bei einzelnen Projekten wirken gelegentlich befreundete Mitwirkende mit. Als primäre Zielplattform für die Grafikdemos dient Windows 10 mit DirectX 11. 
+                Feedback und Anfragen können per E-Mail an <em>grx at pandacube.com</em> gesendet werden.</p>
+				
+				<p class="about-text">
+				Diese Seite ist der Webauftritt der Demoszene-Gruppe <strong>Panda Cube</strong>. Die Gruppe besteht im Kern aus GRX (Programmierung) und Zonbie (Grafik/Design) und veröffentlicht seit 2009 regelmäßig PC-Demos. Bei einzelnen Projekten wirken gelegentlich befreundete Mitwirkende mit. Als primäre Zielplattform für die Grafikdemos dient Windows 10 mit DirectX 11. 
+                Feedback und Anfragen können per E-Mail an <em>grx at pandacube.com</em> gesendet werden.</p>
+				
+				<p class="about-text">
+				Diese Seite ist der Webauftritt der Demoszene-Gruppe <strong>Panda Cube</strong>. Die Gruppe besteht im Kern aus GRX (Programmierung) und Zonbie (Grafik/Design) und veröffentlicht seit 2009 regelmäßig PC-Demos. Bei einzelnen Projekten wirken gelegentlich befreundete Mitwirkende mit. Als primäre Zielplattform für die Grafikdemos dient Windows 10 mit DirectX 11. 
+                Feedback und Anfragen können per E-Mail an <em>grx at pandacube.com</em> gesendet werden.</p>
+				
+				<p class="about-text">
+				Diese Seite ist der Webauftritt der Demoszene-Gruppe <strong>Panda Cube</strong>. Die Gruppe besteht im Kern aus GRX (Programmierung) und Zonbie (Grafik/Design) und veröffentlicht seit 2009 regelmäßig PC-Demos. Bei einzelnen Projekten wirken gelegentlich befreundete Mitwirkende mit. Als primäre Zielplattform für die Grafikdemos dient Windows 10 mit DirectX 11. 
+                Feedback und Anfragen können per E-Mail an <em>grx at pandacube.com</em> gesendet werden.</p>
+				
+				<p class="about-text">
+				Diese Seite ist der Webauftritt der Demoszene-Gruppe <strong>Panda Cube</strong>. Die Gruppe besteht im Kern aus GRX (Programmierung) und Zonbie (Grafik/Design) und veröffentlicht seit 2009 regelmäßig PC-Demos. Bei einzelnen Projekten wirken gelegentlich befreundete Mitwirkende mit. Als primäre Zielplattform für die Grafikdemos dient Windows 10 mit DirectX 11. 
+                Feedback und Anfragen können per E-Mail an <em>grx at pandacube.com</em> gesendet werden.</p>
+				
+				<p class="about-text">
+				Diese Seite ist der Webauftritt der Demoszene-Gruppe <strong>Panda Cube</strong>. Die Gruppe besteht im Kern aus GRX (Programmierung) und Zonbie (Grafik/Design) und veröffentlicht seit 2009 regelmäßig PC-Demos. Bei einzelnen Projekten wirken gelegentlich befreundete Mitwirkende mit. Als primäre Zielplattform für die Grafikdemos dient Windows 10 mit DirectX 11. 
+                Feedback und Anfragen können per E-Mail an <em>grx at pandacube.com</em> gesendet werden.</p>
+				
+				<p class="about-text">
+				Diese Seite ist der Webauftritt der Demoszene-Gruppe <strong>Panda Cube</strong>. Die Gruppe besteht im Kern aus GRX (Programmierung) und Zonbie (Grafik/Design) und veröffentlicht seit 2009 regelmäßig PC-Demos. Bei einzelnen Projekten wirken gelegentlich befreundete Mitwirkende mit. Als primäre Zielplattform für die Grafikdemos dient Windows 10 mit DirectX 11. 
+                Feedback und Anfragen können per E-Mail an <em>grx at pandacube.com</em> gesendet werden.</p>
+        </div>
+   
+   </main>
+
+    <script>
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.querySelectorAll('.nav-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            document.getElementById(tabId).classList.add('active');
+            event.target.classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
