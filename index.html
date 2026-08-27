@@ -16,18 +16,18 @@
 
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background-color: #000000; /* Schwarz statt Weiß */
-            color: #ffffff;           /* Weißer Text */
+            background-color: #000000;
+            color: #5ce1e6;           /* Türkis/Cyan aus dem Bild */
             padding: 20px;
             max-width: 1000px;
             margin: 0 auto;
         }
 
-        /* Fixed Top Container (Fixiert Header + Navigation) */
+        /* Fixed Top Container */
         .fixed-header-container {
             position: sticky;
             top: 0;
-            background-color: #000000; /* Verdeckt den gescrollten Text */
+            background-color: #000000;
             z-index: 1000;
             padding-bottom: 1px;
         }
@@ -47,36 +47,35 @@
             object-fit: contain;
         }
 
-        /* Container für Banner-Bild UND Navigation */
         .title-container {
             display: flex;
             flex-direction: column;
-            align-items: flex-end; /* Richtet Banner und Nav rechts aus */
+            align-items: flex-end;
             flex-grow: 1;
             margin-left: 20px;
         }
 
-        /* Bonzai Bros. Logo Banner */
+        /* Banner Image */
         .banner-img {
             max-width: 150%;
             height: auto;
             max-height: 120px;
             object-fit: contain;
-            margin-bottom: 15px; /* Abstand zur Navigationsleiste darunter */
+            margin-bottom: 15px;
         }
         
-        /* Navigation Bar (Jetzt unter dem Banner) */
+        /* Navigation Bar */
         nav {
             position: relative;
-            width: 100%; /* In die volle Breite des rechten Bereichs einpassen */
-            background: #e0e0e0;
-            border: 2px solid #999;
+            width: 100%;
+            background: #0d1b2a;
+            border: 2px solid #5ce1e6;
             border-radius: 8px;
             padding: 8px 20px;
             display: flex;
             justify-content: space-around;
             align-items: center;
-            box-shadow: inset 0 0 10px rgba(0,0,0,0.1), 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: inset 0 0 10px rgba(92, 225, 230, 0.2), 0 4px 6px rgba(0,0,0,0.5);
         }
 
         nav::before, nav::after {
@@ -85,7 +84,7 @@
             left: -10px;
             right: -10px;
             height: 2px;
-            background: #aaa;
+            background: #5ce1e6;
         }
         nav::before { top: -6px; }
         nav::after { bottom: -6px; }
@@ -95,18 +94,19 @@
             border: none;
             font-family: 'Arial Black', sans-serif;
             font-size: 24px;
-            color: #333;
-            text-shadow: 1px 1px 0px #fff, -1px -1px 0px #888;
+            color: #5ce1e6;
+            text-shadow: 1px 1px 0px #000, 0 0 5px rgba(92, 225, 230, 0.5);
             cursor: pointer;
             transition: transform 0.1s, color 0.1s;
         }
 
         .nav-button:hover, .nav-button.active {
-            color: #000;
+            color: #ffffff;
+            text-shadow: 0 0 8px #5ce1e6, 0 0 12px #5ce1e6;
             transform: scale(1.05);
         }
 
-        /* Main Content Padding */
+        /* Main Content */
         main {
             padding-top: 0px;
         }
@@ -129,13 +129,14 @@
             font-size: 16px;
             font-weight: bold;
             margin-bottom: 12px;
-            color: #ffffff;
+            color: #5ce1e6;
+            text-shadow: 0 0 3px rgba(92, 225, 230, 0.4);
         }
 
         .news-text {
             font-size: 14px;
             line-height: 1.5;
-            color: #dddddd;
+            color: #5ce1e6;
         }
 
         /* Releases Layout */
@@ -149,13 +150,14 @@
         .release-title {
             font-size: 16px;
             font-weight: bold;
-            color: #ffffff;
+            color: #5ce1e6;
+            text-shadow: 0 0 3px rgba(92, 225, 230, 0.4);
         }
 
         .release-description {
             font-size: 16px;
             line-height: 1.4;
-            color: #dddddd;
+            color: #5ce1e6;
         }
 
         .release-links {
@@ -168,33 +170,42 @@
         }
 
         .release-links a {
-            color: #66b2ff; /* Gut lesbares Blau für dunklen Hintergrund */
+            color: #5ce1e6;
             font-size: 16px;
             text-decoration: underline;
         }
 
+        .release-links a:hover {
+            color: #ffffff;
+            text-shadow: 0 0 5px #5ce1e6;
+        }
+
         .release-links a:visited {
-            color: #b388ff;
+            color: #ff2a6d; /* Neon-Magenta Akzent für besuchte Links */
         }
 
         /* About Section Layout */
         .about-text {
             font-size: 16px;
             line-height: 1.6;
-            color: #dddddd; /* Weiß/Hellgrau für Dark-Mode */
+            color: #5ce1e6;
             margin-bottom: 15px;
         }
 
-        /* Standard für alle Divider */
+        .about-text strong {
+            color: #ffffff;
+            text-shadow: 0 0 4px #5ce1e6;
+        }
+
+        /* Divider */
         .divider {
             height: 1px;
-            background: linear-gradient(to bottom, #888, #fff, #bbb);
+            background: linear-gradient(to right, transparent, #5ce1e6, transparent);
             border-radius: 1px;
-            box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+            box-shadow: 0 0 6px rgba(92, 225, 230, 0.5);
             margin: 20px 0;
         }
 
-        /* Speziell für den ERSTEN Divider im Bereich: Keinen Abstand nach oben */
         .tab-content > .divider:first-child,
         main > .divider:first-child {
             margin-top: 1px; 
@@ -209,10 +220,8 @@
         <header>
             <img src="bonzai_cube.jpg" alt="Bonsai Cube Logo" class="logo-img">
             <div class="title-container">
-                <!-- Bonzai Bros. Bild-Logo anstelle von Text -->
                 <img src="bonzai_logo.jpg" alt="Bonzai Bros. - More than just a tree" class="banner-img">
                 
-                <!-- Navigation -->
                 <nav>
                     <button class="nav-button active" onclick="switchTab('news')">News</button>
                     <button class="nav-button" onclick="switchTab('releases')">Releases</button>
@@ -313,5 +322,4 @@
     </script>
 
 </body>
-</html>
 </html>
