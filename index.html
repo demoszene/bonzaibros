@@ -14,19 +14,19 @@
         }
 
         body {
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #ffffff;
-            color: #000000;
-            padding: 20px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #000000; /* Schwarz statt Weiß */
+    color: #ffffff;           /* Weißer Text */
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
 
         /* Fixed Top Container (Fixiert Header + Navigation) */
         .fixed-header-container {
             position: sticky;
             top: 0;
-            background-color: #ffffff; /* Verdeckt den gescrollten Text */
+            background-color: #000000; /* Verdeckt den gescrollten Text */
             z-index: 1000;
             padding-bottom: 1px;
         }
@@ -57,27 +57,28 @@
 
         /* Haupttitel */
         .header-title {
-            font-family: 'Shojumaru', cursive, sans-serif;
-            font-size: 70px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            background: linear-gradient(to bottom, #777 0%, #000 60%, #444 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            margin: 0;
-        }
+    font-family: 'Shojumaru', cursive, sans-serif;
+    font-size: 70px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    /* Heller Farbverlauf von Weiß zu Grau */
+    background: linear-gradient(to bottom, #ffffff 0%, #888888 60%, #cccccc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 4px rgba(255,255,255,0.2);
+    margin: 0;
+}
 
         /* Untertext / Subtitle */
         .header-subtitle {
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 16px;
-            color: #555;
-            letter-spacing: 1px;
-            margin-top: 5px;
-            margin-bottom: 15px; /* Abstand zum Menü darunter */
-            text-transform: uppercase;
-        }
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: #bbb; /* Hellgrau */
+    letter-spacing: 1px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
 		
 	     /* Navigation Bar (Jetzt unter dem Slogan) */
         nav {
