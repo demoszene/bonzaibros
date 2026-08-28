@@ -32,12 +32,12 @@
             padding-bottom: 1px;
         }
 
-        /* Header Section */
+        /* Header Section (Bilder nebeneinander) */
         header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 0px;
+            margin-bottom: 15px;
             padding-top: 10px;
         }
         
@@ -57,14 +57,13 @@
 
         /* Banner Image */
         .banner-img {
-            max-width: 150%;
+            max-width: 100%;
             height: auto;
             max-height: 150px;
             object-fit: contain;
-            margin-bottom: 15px;
         }
         
-        /* Navigation Bar */
+        /* Navigation Bar (Jetzt über die volle Breite unter den Logos) */
         nav {
             position: relative;
             width: 100%;
@@ -76,6 +75,7 @@
             justify-content: space-around;
             align-items: center;
             box-shadow: inset 0 0 10px rgba(92, 225, 230, 0.2), 0 4px 6px rgba(0,0,0,0.5);
+            margin-top: 5px;
         }
 
         nav::before, nav::after {
@@ -120,7 +120,7 @@
             display: block;
         }
 
-        /* News Layout (Jetzt wie Releases im 3-Spalten-Grid) */
+        /* News Layout (3-Spalten-Grid) */
         .news-item {
             display: grid;
             grid-template-columns: 220px 1fr 220px;
@@ -226,26 +226,26 @@
 <body>
 
     <div class="fixed-header-container">
-    <header>
+        <header>
             <img src="bonzai_cube.jpg" alt="Bonsai Cube Logo" class="logo-img">
             <div class="title-container">
-            <img src="bonzai_logo.jpg" alt="Bonzai Bros. - Cultivating Silicon" class="banner-img">
-                
-             <nav>
-             <button class="nav-button active" onclick="switchTab('news')">News</button>
-             <button class="nav-button" onclick="switchTab('releases')">Releases</button>
-             <button class="nav-button" onclick="switchTab('about')">About</button>
-             </nav>
+                <img src="bonzai_logo.jpg" alt="Bonzai Bros. - Cultivating Silicon" class="banner-img">
+            </div>
+        </header>
+        
+        <nav>
+            <button class="nav-button active" onclick="switchTab('news')">News</button>
+            <button class="nav-button" onclick="switchTab('releases')">Releases</button>
+            <button class="nav-button" onclick="switchTab('about')">About</button>
+        </nav>
     </div>
-    </header>
-   
-    </div>
+
     <main>
 
         <div id="news" class="tab-content active">
         
             <div class="divider"></div>
-       
+        
             <article class="news-item">
                 <div class="news-title">The Website</div>
                 <div class="news-text">Creation of a simple website to share the necessary content. The site features a deliberately minimalist design and is still under development. Further information to follow.</div>
@@ -253,12 +253,12 @@
             </article>
 
             <div class="divider"></div>
-               
+                
             <article class="news-item">
                 <div class="news-title">The Rebirth</div>
                 <div class="news-text">Rebirth of Bonzai Bros. by s7ing. Maybe more releases and new members will follow. A place for friendship and to be creative in any way with no high standard. Bonzai Bros. is a placte to fells free dong stuff. </div>
-                 <div class="news-links">2026-01-01</div>
-            </article>               
+                <div class="news-links">2026-01-01</div>
+            </article>         
             
             <div class="divider"></div>
         
@@ -272,8 +272,8 @@
                 <div class="release-title">The Announce</div>
                 <div class="release-description">First release bei Bonzai by Cocoon and Solid.</div>
                 <ul class="release-links">
-                <li><a href="https://www.pouet.net/prod.php?which=49301" target="_blank">[Link to Pouet.net]</a></li>
-                <li><a href="https://www.youtube.com/watch?v=EQEL1PzY2x4" target="_blank">[Link to YouTube]</a></li>
+                    <li><a href="https://www.pouet.net/prod.php?which=49301" target="_blank">[Link to Pouet.net]</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=EQEL1PzY2x4" target="_blank">[Link to YouTube]</a></li>
                 </ul>
             </article>
 
@@ -308,7 +308,7 @@
                 Former member Cocoon (nowadays know as Hardy) released some stuff in the years 2007 to 2008 after he joined <strong>TRSI</strong>. Since then the group went completely inactive.
             </p>
             
-             <p class="about-text">
+            <p class="about-text">
                 <strong>Bonzai Bros.</strong> was reactivated by s7ing in 2026 to have a place for beeing creative and doing some stuff. Maybe more members or releases will follow. Who knows. Time will tell: To be continued!
             </p>
             
