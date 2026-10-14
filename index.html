@@ -32,27 +32,13 @@
             padding-bottom: 1px;
         }
 
-        /* Header Section (Bilder nebeneinander) */
+        /* Header Section (Zentriert) */
         header {
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center; /* Zentriert den Inhalt horizontal */
             margin-bottom: 15px;
             padding-top: 10px;
-        }
-        
-        .logo-img {
-            width: 250px;
-            height: auto;
-            object-fit: contain;
-        }
-
-        .title-container {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            flex-grow: 1;
-            margin-left: 20px;
         }
 
         /* Banner Image */
@@ -63,7 +49,7 @@
             object-fit: contain;
         }
         
-        /* Navigation Bar (Jetzt über die volle Breite unter den Logos) */
+        /* Navigation Bar */
         nav {
             position: relative;
             width: 100%;
@@ -227,10 +213,7 @@
 
     <div class="fixed-header-container">
         <header>
-            <img src="bonzai_cube.jpg" alt="Bonsai Cube Logo" class="logo-img">
-            <div class="title-container">
-                <img src="bonzai_bros_logo.jpg" alt="Bonzai Bros. - Cultivating Silicon" class="banner-img">
-            </div>
+            <img src="bonzai_bros_logo.jpg" alt="Bonzai Bros. - Cultivating Silicon" class="banner-img">
         </header>
         
         <nav>
@@ -331,6 +314,9 @@
             event.target.classList.add('active');
         }
     </script>
+
+</body>
+</html>
 
 </body>
 </html>
