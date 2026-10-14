@@ -92,9 +92,37 @@
             transform: scale(1.05);
         }
 
+        /* Laufschrift (Marquee) */
+        .scrolling-text-container {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            margin-top: 15px;
+            padding: 5px 0;
+            border-top: 1px dotted #5ce1e6;    /* Dezente Linien oben und unten im Retro-Stil */
+            border-bottom: 1px dotted #5ce1e6;
+            background-color: rgba(13, 27, 42, 0.5);
+        }
+
+        .scrolling-text {
+            display: inline-block;
+            padding-left: 100%; /* Startet ganz rechts am Bildschirmrand */
+            color: #87cefa;     /* Hellblau */
+            font-family: 'Arial', sans-serif;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: scrollText 25s linear infinite; /* 25s steuert die Geschwindigkeit */
+        }
+
+        @keyframes scrollText {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+
         /* Main Content */
         main {
-            padding-top: 0px;
+            padding-top: 10px;
         }
 
         /* Tab Visibility */
@@ -176,8 +204,9 @@
             text-shadow: 0 0 5px #5ce1e6;
         }
 
+        /* Besuchte Links (Dunkelgelb) */
         .release-links a:visited {
-            color: #ff2a6d;
+            color: #b8860b; /* DarkGoldenRod (Dunkelgelb) */
         }
 
         /* About Section Layout */
@@ -221,6 +250,13 @@
             <button class="nav-button" onclick="switchTab('releases')">Releases</button>
             <button class="nav-button" onclick="switchTab('about')">About</button>
         </nav>
+
+        <!-- Laufschrift -->
+        <div class="scrolling-text-container">
+            <div class="scrolling-text">
+                +++ Welcome to the Bonzai Bros. Website +++ Still under construction +++ Stay tuned for more updates, releases and news! +++ Cultivating Silicon since 1993 +++
+            </div>
+        </div>
     </div>
 
     <main>
@@ -314,9 +350,6 @@
             event.target.classList.add('active');
         }
     </script>
-
-</body>
-</html>
 
 </body>
 </html>
