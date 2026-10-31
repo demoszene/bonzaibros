@@ -36,7 +36,7 @@
         header {
             display: flex;
             align-items: center;
-            justify-content: center; /* Zentriert den Inhalt horizontal */
+            justify-content: center;
             margin-bottom: 15px;
             padding-top: 10px;
         }
@@ -99,20 +99,20 @@
             white-space: nowrap;
             margin-top: 15px;
             padding: 5px 0;
-            border-top: 1px dotted #5ce1e6;    /* Dezente Linien oben und unten im Retro-Stil */
+            border-top: 1px dotted #5ce1e6;
             border-bottom: 1px dotted #5ce1e6;
             background-color: rgba(13, 27, 42, 0.5);
         }
 
         .scrolling-text {
             display: inline-block;
-            padding-left: 100%; /* Startet ganz rechts am Bildschirmrand */
+            padding-left: 100%;
             color: #87cefa;     /* Hellblau */
             font-family: 'Arial', sans-serif;
             font-size: 14px;
             text-transform: uppercase;
             letter-spacing: 2px;
-            animation: scrollText 50s linear infinite; /* 25s steuert die Geschwindigkeit */
+            animation: scrollText 25s linear infinite;
         }
 
         @keyframes scrollText {
@@ -134,7 +134,7 @@
             display: block;
         }
 
-        /* News Layout (3-Spalten-Grid) */
+        /* News Layout (3-Spalten-Grid für Desktop) */
         .news-item {
             display: grid;
             grid-template-columns: 220px 1fr 220px;
@@ -163,7 +163,7 @@
             color: #ffffff;
         }
 
-        /* Releases Layout */
+        /* Releases Layout (3-Spalten-Grid für Desktop) */
         .release-item {
             display: grid;
             grid-template-columns: 220px 1fr 220px;
@@ -204,9 +204,8 @@
             text-shadow: 0 0 5px #5ce1e6;
         }
 
-        /* Besuchte Links (Dunkelgelb) */
         .release-links a:visited {
-            color: #b8860b; /* DarkGoldenRod (Dunkelgelb) */
+            color: #b8860b;
         }
 
         /* About Section Layout */
@@ -235,6 +234,31 @@
         main > .divider:first-child {
             margin-top: 1px; 
         }
+
+        /* --- MOBILE RESPONSIVE DESIGN --- */
+        @media (max-width: 768px) {
+            /* Umbruch auf 1 Spalte für kleine Bildschirme */
+            .news-item, .release-item {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            /* Links auf dem Handy linksbündig für besseren Lesefluss */
+            .news-links, .release-links li {
+                text-align: left;
+            }
+
+            /* Navigationstasten etwas kleiner machen, damit sie aufs Display passen */
+            .nav-button {
+                font-size: 16px;
+                padding: 4px;
+            }
+
+            /* Etwas weniger Padding im Body-Bereich auf dem Handy */
+            body {
+                padding: 10px;
+            }
+        }
     </style>
 </head>
 
@@ -254,8 +278,7 @@
         <!-- Laufschrift -->
         <div class="scrolling-text-container">
             <div class="scrolling-text">
-                +++ Welcome to the Bonzai Bros. Website +++ Stay tuned for more updates, releases and news! +++ Cultivating Silicon since 1993 +++ Our Respect goes to Alcatraz, TRSI, Scoopex, Nuance, Rebels, Nah Kolor, Byterappers,
-                Haujobb, Shrimps Design, Fairlight, Farbrausch, Desire, Andromeda, Lemon., Razor 1911, Panda Cube, Conspiracy, Abyss, Still, Cocoon, Ghosttown, The Black Lotus +++
+                +++ Welcome to the Bonzai Bros. Website +++ Still under construction +++ Stay tuned for more updates, releases and news! +++ Cultivating Silicon since 1993 +++
             </div>
         </div>
     </div>
@@ -276,7 +299,7 @@
                 
             <article class="news-item">
                 <div class="news-title">The Rebirth</div>
-                <div class="news-text">Rebirth of Bonzai Bros. by s7ing. Maybe more releases and new members will follow. A place for friendship and to be creative in any way with no high standard. Bonzai Bros. is a place to feel free in doing stuff. </div>
+                <div class="news-text">Rebirth of Bonzai Bros. by s7ing. Maybe more releases and new members will follow. A place for friendship and to be creative in any way with no high standard. Bonzai Bros. is a placte to fells free dong stuff. </div>
                 <div class="news-links">2026-01-01</div>
             </article>         
             
@@ -290,177 +313,13 @@
         
             <article class="release-item">
                 <div class="release-title">The Announce</div>
-                <div class="release-description">First release and announce of Bonzai by Cocoon and Solid.<br>[1994] [Amiga]</div>
+                <div class="release-description">First release bei Bonzai by Cocoon and Solid.</div>
                 <ul class="release-links">
                     <li><a href="https://www.pouet.net/prod.php?which=49301" target="_blank">[Link to Pouet.net]</a></li>
                     <li><a href="https://www.youtube.com/watch?v=EQEL1PzY2x4" target="_blank">[Link to YouTube]</a></li>
-               </ul>
-            </article>
-
-            <div class="divider"></div>
-                
-                <article class="release-item">
-                <div class="release-title">Sleepless Nights</div>
-                <div class="release-description">40K Intro done by Cocoon, Ragman and Solid.<br>[1994] [Amiga]</div>
-                <ul class="release-links">
-                    <li><a href="https://www.pouet.net/prod.php?which=49291" target="_blank">[Link to Pouet.net]</a></li>
-            </ul>
-            </article>
-
-             <div class="divider"></div>
-
-             <article class="release-item">
-                <div class="release-title">Love like Blood</div>
-                <div class="release-description">Intro for the legendary BBS Love like Blood by MDB. Done by Cocoon and Monty.<br>[1994] [Amiga]</div>
-                <ul class="release-links">
-                    <li><a href="https://www.pouet.net/prod.php?which=49293" target="_blank">[Link to Pouet.net]</a></li>
-            </ul>
-            </article>
-
-             <div class="divider"></div>
-                
-                <article class="release-item">
-                <div class="release-title">Vector Cubes</div>
-                <div class="release-description">Fast-prod Amiga Intro Done by Cocoon and Ragman.<br>[1994] [Amiga]</div>
-                <ul class="release-links">
-                    <li><a href="https://www.pouet.net/prod.php?which=49300" target="_blank">[Link to Pouet.net]</a></li>
-            </ul>
-            </article>
-
-            <div class="divider"></div>
-                
-                <article class="release-item">
-                <div class="release-title">BBS Intro 3</div>
-                <div class="release-description">Another BBS Intro done by Snoopy and Cocoon.<br>[1994] [Amiga]</div>
-                <ul class="release-links">
-                    <li><a href="https://www.pouet.net/prod.php?which=49294" target="_blank">[Link to Pouet.net]</a></li>
-            </ul>
-            </article>
-
-          <div class="divider"></div>
-                
-                <article class="release-item">
-                <div class="release-title">Automan gets married</div>
-                <div class="release-description">Marriage Intro for Automan done by Soild, MDB, s7ing and Cocoon.<br>[1994] [Amiga]</div>
-                <ul class="release-links">
-                    <li><a href="https://www.pouet.net/prod.php?which=49302" target="_blank">[Link to Pouet.net]</a></li>
-            </ul>
-            </article>
-
-            <div class="divider"></div>
-                
-                <article class="release-item">
-                <div class="release-title">Happy Birthday PVC</div>
-                <div class="release-description">Fast Prod made for PVC´s birthday by Dahaul, Gentleman and Cocoon.<br>[1994] [Amiga]</div>
-                <ul class="release-links">
-                    <li><a href="https://www.pouet.net/prod.php?which=49296" target="_blank">[Link to Pouet.net]</a></li>
-            </ul>
-            </article>
-
-             <div class="divider"></div>
-                
-                <article class="release-item">
-                <div class="release-title">Crazy Suxx</div>
-                <div class="release-description">Fast-prod Amiga Intro for the birthday of PVC done by Ragman and Cocoon.<br>[1994] [Amiga]</div>
-                <ul class="release-links">
-                    <li><a href="https://www.pouet.net/prod.php?which=49297" target="_blank">[Link to Pouet.net]</a></li>
-            </ul>
-            </article> 
-
-                <div class="divider"></div>
-                
-                <article class="release-item">
-                <div class="release-title">5-Hourz-Prod</div>
-                <div class="release-description">Fast-prod Amiga Intro for the birthday of PVC done by Dahaul, Gentleman and Cocoon.<br>[1994] [Amiga]</div>
-                <ul class="release-links">
-                    <li><a href="https://www.pouet.net/prod.php?which=49292" target="_blank">[Link to Pouet.net]</a></li>
-            </ul>
-            </article>
-
-                <div class="divider"></div>
-                
-                <article class="release-item">
-                <div class="release-title">A Erika Eleniak (Baywatch) Slideshow</div>
-                <div class="release-description">Slideshow of Erika done by Covenant, Dahaul, s7ing and Cocoon.<br>[1994] [Amiga]</div>
-                <ul class="release-links">
-                    <li><a href="https://www.pouet.net/prod.php?which=49290" target="_blank">[Link to Pouet.net]</a></li>
-            </ul>
-            </article>
-
-                <div class="divider"></div>
-                
-                <article class="release-item">
-                <div class="release-title">Gimme Alcohol</div>
-                <div class="release-description">Amiga AGA Demo released at the Doom´s Day Party done by Solid, Ragman and Cocoon.<br>[1994] [Amiga]</div>
-                <ul class="release-links">
-                    <li><a href="https://www.pouet.net/prod.php?which=17945" target="_blank">[Link to Pouet.net]</a></li>
-                      <li><a href="https://www.youtube.com/watch?v=oi2JV_C82UA"_blank">[Link to YouTube]</a></li>
-               </ul>
-            </article>
-            
-               <div class="divider"></div>
-                
-                <article class="release-item">
-                <div class="release-title">Ragman the game</div>
-                <div class="release-description">Amiga Gamee which was released at the Doom´s Day Party done by Solid, MDB and Cocoon wgich placed 4th ath the compo.<br>[1994] [Amiga]</div>
-                <ul class="release-links">
-                    <li><a href="https://www.pouet.net/prod.php?which=17945" target="_blank">[Link to Pouet.net]</a></li>
                 </ul>
             </article>
 
-                <div class="divider"></div>
-                
-                <article class="release-item">
-                <div class="release-title">Mario Bros. vs. Bonzai Bros.</div>
-                <div class="release-description">Amiga Demo done by Solid, Dahaul, Dr. Avalanche and Cocoon.<br>[1995] [Amiga]</div>
-                <ul class="release-links">
-                    <li><a href="https://www.pouet.net/prod.php?which=49298" target="_blank">[Link to Pouet.net]</a></li>
-                </ul>
-            </article>
-
-                <div class="divider"></div>
-                
-                <article class="release-item">
-                <div class="release-title">Those where the days</div>
-                <div class="release-description">Amiga Wild Entry slideshow done by s7ing. Released at Breakpoint 2005 which place 11t ath the Animation Compo<br>[2005] [Wild]</div>
-                <ul class="release-links">
-                    <li><a href="https://www.pouet.net/prod.php?which=16822" target="_blank">[Link to Pouet.net]</a></li>
-                    <li><a href="https://www.youtube.com/watch?v=LUbI9Fym8Ns" target="_blank">[Link to YouTube]</a></li>
-                </ul>
-            </article>
-
-                <div class="divider"></div>
-                
-                <article class="release-item">
-                <div class="release-title">Whiteout</div>
-                <div class="release-description">4K Intro done by Hardy placed 11th at the NVScene Demo Party<br>[2008] [PC]</div>
-                <ul class="release-links">
-                    <li><a href="https://www.pouet.net/prod.php?which=51445" target="_blank">[Link to Pouet.net]</a></li>
-                    <li><a href="https://www.youtube.com/watch?v=i0t_fF6gBSg" target="_blank">[Link to YouTube]</a></li>
-                </ul>
-            </article>
-
-                <div class="divider"></div>
-                
-                <article class="release-item">
-                <div class="release-title">Jojo Defect</div>
-                <div class="release-description">4K Intro done by Hardy, Yezyoa and Michu placed 7th at the Sundown Demo Party<br>[2008] [PC]</div>
-                <ul class="release-links">
-                    <li><a href="https://www.pouet.net/prod.php?which=51656" target="_blank">[Link to Pouet.net]</a></li>
-                 </ul>
-            </article>
-
-                   <div class="divider"></div>
-                
-                <article class="release-item">
-                <div class="release-title">Belgian Summer</div>
-                <div class="release-description">4K Intro done by Hardy and pOWL! placed 1st at The Ultimate Meeting party<br>[2008] [PC]</div>
-                <ul class="release-links">
-                    <li><a href="https://www.pouet.net/prod.php?which=52356" target="_blank">[Link to Pouet.net]</a></li>
-                    <li><a href="https://www.youtube.com/watch?v=VOAFHp93vfo" target="_blank">[Link to YouTube]</a></li>
-                </ul>
-            </article>
-            
             <div class="divider"></div>
         
         </div>
@@ -484,23 +343,17 @@
             </p>
 
             <p class="about-text">
-                After some years of unactivity, in 2005 a subgroup called <strong>Bonzai Revival</strong> was founded by s7ing and Dahaul. Later on also Ragman, MDB and Cocoon teamed up. 
+                After some years of unactivity, in 2005 a subgroup called <strong>Bonzai Revival</strong> was founded by s7ing and Dahaul. Later on als Ragman, MDB and Cocoon teamed up. 
                 In 2007 the subgroup were closed as s7ing and Dahaul (nowadays know as -pOWL!) joined later on <strong>Scoopex&Deviance</strong> and after that reactivated <strong>Alcatraz</strong> on the PC. 
             </p>
 
             <p class="about-text">
-                Former member Cocoon (nowadays know as Hardy) released some stuff in the years 2007 to 2008 after he joined <strong>TRSI</strong>. Also Gentleman teamed up again an organized the group for a while. Since then the group went completely inactive.
+                Former member Cocoon (nowadays know as Hardy) released some stuff in the years 2007 to 2008 after he joined <strong>TRSI</strong>. Since then the group went completely inactive.
             </p>
             
             <p class="about-text">
                 <strong>Bonzai Bros.</strong> was reactivated by s7ing in 2026 to have a place for beeing creative and doing some stuff. Maybe more members or releases will follow. Who knows. Time will tell: To be continued!
             </p>
-
-            <p class="about-text">
-                <strong>Current Members</strong> s7ing (Founder, Gfx)
-            </p>
-
-
             
             <div class="divider"></div>
         
